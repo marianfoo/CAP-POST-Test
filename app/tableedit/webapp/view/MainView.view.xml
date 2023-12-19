@@ -1,0 +1,34 @@
+<mvc:View controllerName="ui5.tableedit.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <!-- <smartFilterBar:SmartFilterBar
+            id="smartFilterBar"
+            entitySet="Books">
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration
+                    key="Category"
+                    visibleInAdvancedArea="true"
+                    preventInitialDataFetchInValueHelpDialog="false">
+                </smartFilterBar:ControlConfiguration>
+            </smartFilterBar:controlConfiguration>
+        </smartFilterBar:SmartFilterBar> -->
+        <smartTable:SmartTable
+            id="smartTable_ResponsiveTable"
+            smartFilterId="smartFilterBar"
+            tableType="ResponsiveTable"
+            editable="false"
+            entitySet="Books"
+            useVariantManagement="false"
+            useTablePersonalisation="false"
+            header="Books"
+            showRowCount="true"
+            useExportToExcel="false"
+            enableAutoBinding="true">
+        </smartTable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>
