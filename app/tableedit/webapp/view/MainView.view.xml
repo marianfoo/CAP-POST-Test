@@ -2,32 +2,52 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
-	xmlns:smartTable="sap.ui.comp.smarttable">
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    >
     <Page id="page" title="{i18n>title}">
         <content>
-            <!-- <smartFilterBar:SmartFilterBar
+            <smartFilterBar:SmartFilterBar
             id="smartFilterBar"
-            entitySet="Books">
+            entitySet="Books"
+            persistencyKey="SmartFilter_Explored" smartVariant="pageVariantId">
             <smartFilterBar:controlConfiguration>
                 <smartFilterBar:ControlConfiguration
-                    key="Category"
+                    key="price"
                     visibleInAdvancedArea="true"
                     preventInitialDataFetchInValueHelpDialog="false">
                 </smartFilterBar:ControlConfiguration>
             </smartFilterBar:controlConfiguration>
-        </smartFilterBar:SmartFilterBar> -->
+        </smartFilterBar:SmartFilterBar>
         <smartTable:SmartTable
-            id="smartTable_ResponsiveTable"
+            id="smartTable"
             smartFilterId="smartFilterBar"
             tableType="ResponsiveTable"
-            editable="false"
+            editable="true"
+            editTogglable="true"
             entitySet="Books"
-            useVariantManagement="false"
-            useTablePersonalisation="false"
+            useVariantManagement="true"
+            useTablePersonalisation="true"
             header="Books"
             showRowCount="true"
             useExportToExcel="false"
-            enableAutoBinding="true">
+            persistencyKey="SmartTableAnalytical_Explored"
+            enableAutoBinding="true"
+            app:useSmartToggle="true"
+            app:useSmartField="true"
+            smartVariant="pageVariantId"
+            fieldChange="onFieldChange"
+            >
+            <Table id="smartTable_ResponsiveTable" >
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<ToolbarSpacer />
+						<Button id="saveAllButton" text="Save all inputs" press="saveAll"/>
+                        <Button id="resetAllButton" text="Reset all inputs" press="resetAll"/>
+                        <ToggleButton id="editButton" text="Save instantly" pressed="{viewData>/instantSave}"/>
+					</OverflowToolbar>
+				</headerToolbar>
+            </Table>
         </smartTable:SmartTable>
         </content>
     </Page>
