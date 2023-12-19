@@ -21,7 +21,7 @@ npm run watch
 | Links to capire                                                                                           | Sample files / folders               |
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | [Project Setup & Layouts](https://cap.cloud.sap/docs/get-started/jumpstart#project-structure)             | [`./`](./)                           |
-| [Domain Modeling with CDS](https://cap.cloud.sap/docs/guides/domain-modeling)                               | [`./db/schema.cds`](./db/schema.cds) |
+| [Domain Modeling with CDS](https://cap.cloud.sap/docs/guides/domain-modeling)                             | [`./db/schema.cds`](./db/schema.cds) |
 | [Defining Services](https://cap.cloud.sap/docs/guides/providing-services#modeling-services)               | [`./srv/*.cds`](./srv)               |
 | [Single-purposed Services](https://cap.cloud.sap/docs/guides/providing-services#single-purposed-services) | [`./srv/*.cds`](./srv)               |
 | [Providing & Consuming Providers](https://cap.cloud.sap/docs/guides/providing-services)                   | http://localhost:4004                |

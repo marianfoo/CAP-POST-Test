@@ -26,8 +26,8 @@
     "watch-tableedit": "cds watch --open tableedit/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
-    "cov2ap" : {
-      "plugin" : true
-      }
+    "cov2ap": {
+      "plugin": true
     }
+  }
 }

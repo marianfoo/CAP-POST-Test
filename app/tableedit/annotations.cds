@@ -17,5 +17,4 @@ annotate AdminService.Books with @(UI: {LineItem: [
         Label: 'Stock',
         Value: stock
     }
-] }
-);
+]});

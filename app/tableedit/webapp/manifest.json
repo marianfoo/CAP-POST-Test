@@ -72,11 +72,10 @@
       "": {
         "dataSource": "mainService",
         "preload": true,
-          "settings": {
-            "defaultBindingMode": "TwoWay",
-            "defaultCountMode": "Inline",
-            "useBatch": true
-          
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "useBatch": true
         }
       }
     },
