@@ -100,9 +100,7 @@
         {
           "name": "RouteMainView",
           "pattern": ":?query:",
-          "target": [
-            "TargetMainView"
-          ]
+          "target": ["TargetMainView"]
         }
       ],
       "targets": {

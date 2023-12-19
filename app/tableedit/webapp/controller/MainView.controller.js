@@ -1,29 +1,29 @@
 sap.ui.define(
-  ['sap/ui/core/mvc/Controller', 'sap/ui/model/json/JSONModel'],
+  ["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
   function (Controller, JSONModel) {
-    'use strict';
+    "use strict";
 
-    return Controller.extend('ui5.tableedit.controller.MainView', {
+    return Controller.extend("ui5.tableedit.controller.MainView", {
       onInit: function () {
         this.getView().setModel(
           new JSONModel({ instantSave: true }),
-          'viewData'
+          "viewData",
         );
       },
       onAfterRendering: function () {
         // set editmode false on startup
-        const smartTable = this.byId('smartTable');
+        const smartTable = this.byId("smartTable");
         smartTable.setEditable(true);
       },
       onFieldChange: function (evt) {
         const table = this.getView().byId(
-          'container-ui5.tableedit---MainView--smartTable_ResponsiveTable'
+          "container-ui5.tableedit---MainView--smartTable_ResponsiveTable",
         );
-        const viewData = this.getView().getModel('viewData').getData();
-        var change = evt.getParameter('changeEvent');
+        const viewData = this.getView().getModel("viewData").getData();
+        var change = evt.getParameter("changeEvent");
         const changedField = change.getSource();
 
         const handleSuccess = (response) => {
@@ -48,17 +48,17 @@ sap.ui.define(
                 ) {
                   const errorMessage = responseBodyParsed.error.message.value;
                   changedField.setValueStateText(errorMessage);
-                  changedField.setValueState('Error');
+                  changedField.setValueState("Error");
                 }
               } catch (e) {
-                console.error('Error parsing response body:', e);
+                console.error("Error parsing response body:", e);
               }
               table.setBusy(false);
               return; // Exit the function after handling the error
             }
           }
 
-          console.log('success');
+          console.log("success");
         };
 
         if (change && viewData.instantSave) {
@@ -69,7 +69,7 @@ sap.ui.define(
               .submitChanges({
                 success: handleSuccess,
                 error: function (error) {
-                  console.log('error');
+                  console.log("error");
                 },
               });
           } catch (error) {
@@ -78,12 +78,12 @@ sap.ui.define(
         }
       },
       saveAll: function () {
-        this.byId('smartTable').getModel().submitChanges();
-        this.byId('smartTable').setEditable(false);
+        this.byId("smartTable").getModel().submitChanges();
+        this.byId("smartTable").setEditable(false);
       },
       resetAll: function () {
-        this.byId('smartTable').getModel().resetChanges();
+        this.byId("smartTable").getModel().resetChanges();
       },
     });
-  }
+  },
 );

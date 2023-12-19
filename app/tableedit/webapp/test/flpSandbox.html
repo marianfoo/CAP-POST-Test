@@ -1,10 +1,10 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-<!-- Copyright (c) 2015 SAP AG, All Rights Reserved -->
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Copyright (c) 2015 SAP AG, All Rights Reserved -->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{appTitle}}</title>
 
     <!-- Bootstrap the unified shell in sandbox mode for standalone usage.
@@ -23,55 +23,59 @@
          for productive scenarios.
     -->
     <script type="text/javascript">
-        window["sap-ushell-config"] = {
-            defaultRenderer: "fiori2",
-            bootstrapPlugins: {
-                "RuntimeAuthoringPlugin": {
-                    component: "sap.ushell.plugins.rta",
-                    config: {
-                        validateAppVersion: false
-                    }
-                }
+      window["sap-ushell-config"] = {
+        defaultRenderer: "fiori2",
+        bootstrapPlugins: {
+          RuntimeAuthoringPlugin: {
+            component: "sap.ushell.plugins.rta",
+            config: {
+              validateAppVersion: false,
             },
-            renderers: {
-                fiori2: {
-                    componentData: {
-                        config: {
-                            search: "hidden"
-                        }
-                    }
-                }
+          },
+        },
+        renderers: {
+          fiori2: {
+            componentData: {
+              config: {
+                search: "hidden",
+              },
             },
-            applications: {
-                "ui5tableedit-display": {
-                    title: "Table Edit",
-                    description: "",
-                    additionalInformation: "SAPUI5.Component=ui5.tableedit",
-                    applicationType: "URL",
-                    url: "../"
-                }
-            }
-        };
+          },
+        },
+        applications: {
+          "ui5tableedit-display": {
+            title: "Table Edit",
+            description: "",
+            additionalInformation: "SAPUI5.Component=ui5.tableedit",
+            applicationType: "URL",
+            url: "../",
+          },
+        },
+      };
     </script>
 
-    <script src="https://sapui5.hana.ondemand.com/1.84.41/test-resources/sap/ushell/bootstrap/sandbox.js" id="sap-ushell-bootstrap"></script>
+    <script
+      src="https://sapui5.hana.ondemand.com/1.84.41/test-resources/sap/ushell/bootstrap/sandbox.js"
+      id="sap-ushell-bootstrap"
+    ></script>
     <!-- Bootstrap the UI5 core library -->
-    <script id="sap-ui-bootstrap"
-        src="https://sapui5.hana.ondemand.com/1.84.41/resources/sap-ui-core.js"
-        data-sap-ui-libs="sap.f,sap.m,sap.suite.ui.generic.template,sap.ui.comp,sap.ui.core,sap.ui.generic.app,sap.ui.table,sap.ushell"
-        data-sap-ui-async="true"
-        data-sap-ui-preload="async"
-        data-sap-ui-theme="sap_fiori_3"
-        data-sap-ui-compatVersion="edge"
-        data-sap-ui-language="en"
-        data-sap-ui-resourceroots='{"ui5.tableedit": "../"}'
-        data-sap-ui-frameOptions="allow"> // NON-SECURE setting for testing environment
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.hana.ondemand.com/1.84.41/resources/sap-ui-core.js"
+      data-sap-ui-libs="sap.f,sap.m,sap.suite.ui.generic.template,sap.ui.comp,sap.ui.core,sap.ui.generic.app,sap.ui.table,sap.ushell"
+      data-sap-ui-async="true"
+      data-sap-ui-preload="async"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-language="en"
+      data-sap-ui-resourceroots='{"ui5.tableedit": "../"}'
+      data-sap-ui-frameOptions="allow"
+    >
+      // NON-SECURE setting for testing environment
     </script>
-</head>
+  </head>
 
-<!-- UI Content -->
+  <!-- UI Content -->
 
-<body class="sapUiBody" id="content">
-</body>
-
+  <body class="sapUiBody" id="content"></body>
 </html>

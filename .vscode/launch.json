@@ -5,29 +5,17 @@
       "type": "node",
       "request": "attach",
       "processId": "${command:PickProcess}",
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "skipFiles": ["<node_internals>/**"]
     },
     {
       "name": "cds run",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
-      "runtimeArgs": [
-        "-n"
-      ],
-      "args": [
-        "--",
-        "cds",
-        "run",
-        "--with-mocks",
-        "--in-memory?"
-      ],
+      "runtimeArgs": ["-n"],
+      "args": ["--", "cds", "run", "--with-mocks", "--in-memory?"],
       "console": "integratedTerminal",
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "skipFiles": ["<node_internals>/**"]
     },
     {
       "name": "Start tableeditv2",
@@ -38,14 +26,8 @@
       "windows": {
         "runtimeExecutable": "npx.cmd"
       },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
-      "args": [
-        "--open",
-        "test/flpSandbox.html#ui5tableeditv2-display"
-      ],
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#ui5tableeditv2-display"],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
@@ -64,10 +46,7 @@
       "windows": {
         "runtimeExecutable": "npx.cmd"
       },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
+      "runtimeArgs": ["fiori", "run"],
       "args": [
         "--config",
         "./ui5-mock.yaml",
@@ -91,10 +70,7 @@
       "windows": {
         "runtimeExecutable": "npx.cmd"
       },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
+      "runtimeArgs": ["fiori", "run"],
       "args": [
         "--config",
         "./ui5-local.yaml",
