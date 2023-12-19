@@ -4,6 +4,10 @@ module.exports = class AdminService extends cds.ApplicationService {
   init() {
     this.before("NEW", "Authors", genid);
     this.before("NEW", "Books", genid);
+    this.before("UPDATE", "Books", async (req) => {
+      const { stock } = req.data;
+      if (stock < 0) req.error`${{ stock }} must be >= ${0}`;
+    });
     return super.init();
   }
 };
