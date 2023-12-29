@@ -36,3 +36,15 @@ entity Genres : sap.common.CodeList {
       children : Composition of many Genres
                    on children.parent = $self;
 }
+
+entity BooksPost : managed {
+  key ID       : Integer;
+      title    : localized String(111)  @mandatory;
+      descr    : localized String(1111);
+      author   : Association to Authors @mandatory;
+      genre    : Association to Genres;
+      stock    : Integer;
+      price    : Decimal;
+      currency : Currency;
+      image    : LargeBinary            @Core.MediaType: 'image/png';
+}

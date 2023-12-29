@@ -1,0 +1,19 @@
+@server = http://localhost:4004
+
+
+####
+POST {{server}}/admin/BooksPost
+Content-Type: application/json;IEEE754Compatible=true
+Authorization: Basic alice:
+
+{
+  "ID": 2,
+  "title": "Poems : Pocket Poets",
+  "descr": "The Everyman's Library Pocket Poets hardcover series is popular for its compact size and reasonable price which does not compromise content. Poems: Bronte contains poems that demonstrate a sensibility elemental in its force with an imaginative discipline and flexibility of the highest order. Also included are an Editor's Note and an index of first lines.",
+  "author": { "ID": 101 },
+  "genre": { "ID": 12 },
+  "stock": 5,
+  "price": "12.05",
+  "currency": { "code": "USD" },
+  "IsActiveEntity": true
+}
